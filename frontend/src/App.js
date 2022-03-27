@@ -34,6 +34,12 @@ class App extends Component {
     this.state = {
       viewCompleted: false,
       todoList: todoItems,
+      modal: false,
+      activeItem: {
+        title: "",
+        description: "",
+        completed: false,
+      },
     };
   }
 
