@@ -43,6 +43,30 @@ class App extends Component {
     };
   }
 
+  toggle = () => {
+    this.setState({ modal: !this.state.modal });
+  };
+
+  handleSubmit = (item) => {
+    this.toggle();
+
+    alert("save" + JSON.stringify(item));
+  };
+
+  handleDelete = (item) => {
+    alert("delete" + JSON.stringify(item));
+  };
+
+  createItem = () => {
+    const item = { title: "", description: "", completed: false };
+
+    this.setState({ activeItem: item, modal: !this.state.modal });
+  };
+
+  editItem = (item) => {
+    this.setState({ activeItem: item, modal: !this.state.modal });
+  };
+
   displayCompleted = (status) => {
     if (status) {
       return this.setState({ viewCompleted: true });
